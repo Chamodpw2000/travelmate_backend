@@ -62,7 +62,9 @@ const UpdateRestaurant = async (req, res) => {
                 openingHours: req.body.openingHours,
                 priceRange: req.body.priceRange,
                 area: req.body.area,
-                rating: req.body.rating
+                rating: req.body.rating,
+                miniDescription: req.body.miniDescription,
+                images: req.body.images,
             },
             { new: true } // Return the updated document
         );
@@ -81,6 +83,7 @@ const UpdateRestaurant = async (req, res) => {
         res.status(500).json({ success: false, error: 'Server Error' });
     }
 };
+
 
 
 

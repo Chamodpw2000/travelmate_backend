@@ -58,20 +58,29 @@ const RestaurantModel = model("Restaurants", {
   cardImages: {
     type: [String],
     default: [],
-    required: true,
+
   },
 
   caroImages: {
     type: [String],
     default: [],
-    required: true,
+   
   },
 
   mainImages: {
     type: [String],
     default: [],
-    required: true,
+   
+  },miniDescription: {
+    type: String,
+    
   },
+
+  images:{
+    type: [String],
+    default: [],
+    
+  }
 });
 
 export { RestaurantModel };
