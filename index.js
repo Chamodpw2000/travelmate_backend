@@ -14,6 +14,12 @@ import hotelRouter from './routes/hotelRoute.js';
 import transportationrouter from './routes/transportationRoute.js';
 import userRouter from './routes/userRoute.js';
 // import bookingScheduler from './schedulers/bookingScheduler.js';
+import transportationAnalyticRouter from './routes/transportationAnalyticRoute.js'; // New transportation analytics route
+import userAnalyticsRoutes from './routes/userAnalyticsRoutes.js';
+import bookingAnalyticsRoutes from './routes/bookingAnalyticsRoutes.js';
+import adminAuthRoutes from './routes/adminAuthRoutes.js'; 
+import guideAnalyticsRoutes from './routes/guideAnalyticsRoutes.js';
+import destinationAnlyticsRoutes from './routes/destinationAnlyticsRoutes.js';
 
 dotenv.config();
 
@@ -66,7 +72,14 @@ app.use("/transportation",transportationrouter);
 app.use('/user',userRouter);
 
 
+app.use('/api/user-analytics', userAnalyticsRoutes);
+app.use('/api/booking-analytics', bookingAnalyticsRoutes);
+app.use('/api/guide-analytics', guideAnalyticsRoutes);
+app.use('/api/destination-analytics', destinationAnlyticsRoutes);
+app.use('/api/transportation-analytics', transportationAnalyticRouter);  // New analytics route
 
+// Admin authentication routes
+app.use('/api/admin', adminAuthRoutes);
 
 
 
