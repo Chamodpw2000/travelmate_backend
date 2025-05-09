@@ -22,7 +22,9 @@ import guideAnalyticsRoutes from './routes/guideAnalyticsRoutes.js';
 import destinationAnlyticsRoutes from './routes/destinationAnlyticsRoutes.js';
 
 dotenv.config();
-
+if (!process.env.JWT_SECRET) {
+  process.env.JWT_SECRET = 'travelmate-admin-secret-key'; 
+}
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(cors());
