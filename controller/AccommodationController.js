@@ -6,6 +6,7 @@ import { DestinationModel } from "../models/Destination.js";
 import { GuideModel } from "../models/Guide.js";
 import { HotelReviewModel } from "../models/HotelReview.js";
 import { TransportationServiceModel } from "../models/Transportation.js";
+import { HospitalModel } from "../models/Hospital.js";
 
 // dotenv.config({ path: "../.env" });
 
@@ -92,11 +93,12 @@ const GetData = async (req, res) => {
         const destinations = await DestinationModel.find();
         const guids = await GuideModel.find();
         const transport = await TransportationServiceModel.find();
+        const hospitals = await HospitalModel.find();
 
 
     
     
-        return res.status(200).json({ success: true, cities,accommodations,destinations,guids,transport  });
+        return res.status(200).json({ success: true, cities,accommodations,destinations,guids,transport,hospitals  });
     } catch (err) {
         console.error(err); // Log the error for debugging purposes
         return res.status(500).json({ success: false, error: err.message });

@@ -91,6 +91,15 @@ const PrePlannedTripModel = model("PrePlannedTrips", {
     type: String,
     required: false,
   },
+  activityImages: {
+    type: [String],
+    default: [],
+    required: true,
+  },
+  mainImage: {  // Changed from mainImages (array) to mainImage (single string)
+    type: String,
+    required: true,
+  },
 });
 
 export { PrePlannedTripModel };

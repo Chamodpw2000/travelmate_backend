@@ -8,9 +8,11 @@ import { GetProfile, RegWithGoogle, SignInWithEmailAndPassword, SignUpWithEmailA
 import { updateAccommodation,addAccommodation, getAllAccomodations, GetData, GetCity, deleteAccommodation , viewAccommodation, getAllHotelReviews, addHotelReview} from '../controller/AccommodationController.js';
 import { AddTravelMateFeedback, GetTravelMateFeedback } from '../controller/FeedbackController.js';
 import { AddPrePlannedTrips, getAllPrePlannedTrips } from '../controller/PrePlannedTripController.js';
-import { AddPrePlannedTripBooking, getAllPrePlannedTripBookings } from '../controller/PrePlannedTripBookingController.js';
+import { AddPrePlannedTrips, deletePrePlannedTrip, getAllPrePlannedTrips, UpdatePrePlannedTrip, viewPrePlannedTrip } from '../controller/PrePlannedTripController.js';
+
 import { AddNewsletterMail } from '../controller/NewsLetterController.js';
-import { AddHospital } from '../controller/HospitalController.js';
+import { AddHospital, deleteHospital, getAllHospitals, updateHospital, viewHospital } from '../controller/HospitalController.js';
+
 import { getPriceDistribution,getAvailabilityStatus,getLocationData,getPopularCategories,getPriceRatingData,getAreaAccommodations} from '../controller/AnalyticsController.js';
 
 const router = express.Router()
@@ -90,6 +92,11 @@ router.get("/allPrePlannedTrips", getAllPrePlannedTrips)
 router.get("/all-pre-planned-trip-bookings", getAllPrePlannedTripBookings)
 
 router.post("/add-pre-planned-trip-bookings", AddPrePlannedTripBooking)
+router.delete("/deletePrePlannedTrip", deletePrePlannedTrip)
+
+router.get('/viewPrePlannedTrip/:id', viewPrePlannedTrip)
+
+router.put("/updatePrePlannedTrip/:id",UpdatePrePlannedTrip)
 
 router.post("/signupwithemailandpassword", SignUpWithEmailAndPassword);
 
@@ -112,6 +119,13 @@ router.post("/addGuideReview", addGuideReview)
 router.get("/getAllGuideReviews", getAllGuideReviews)
 
 router.post("/add-hospital",AddHospital)
+router.get("/allHospitals", getAllHospitals)
+
+router.delete("/deleteHospital", deleteHospital)
+
+router.get('/viewHospital/:id', viewHospital)
+
+router.put("/updateHospital/:id",updateHospital)
 
 router.post("/subscribetonewsletter", AddNewsletterMail)
 
@@ -132,6 +146,3 @@ router.get("/area-count", getAreaAccommodations);
 export default router;
 
 export{router as Router}
-
-
-
