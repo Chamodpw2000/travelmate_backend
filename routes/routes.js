@@ -7,9 +7,9 @@ import { AddDestination,UpdateDestination,getAllDestinations,DeleteDestination,v
 import { GetProfile, RegWithGoogle, SignInWithEmailAndPassword, SignUpWithEmailAndPassword, UpdateProfile } from '../controller/UserController.js';
 import { updateAccommodation,addAccommodation, getAllAccomodations, GetData, GetCity, deleteAccommodation , viewAccommodation, getAllHotelReviews, addHotelReview} from '../controller/AccommodationController.js';
 import { AddTravelMateFeedback, GetTravelMateFeedback } from '../controller/FeedbackController.js';
-import { AddPrePlannedTrips, getAllPrePlannedTrips } from '../controller/PrePlannedTripController.js';
-import { AddPrePlannedTrips, deletePrePlannedTrip, getAllPrePlannedTrips, UpdatePrePlannedTrip, viewPrePlannedTrip } from '../controller/PrePlannedTripController.js';
 
+import { AddPrePlannedTrips, deletePrePlannedTrip, getAllPrePlannedTrips, UpdatePrePlannedTrip, viewPrePlannedTrip } from '../controller/PrePlannedTripController.js';
+import { AddPrePlannedTripBooking, getAllPrePlannedTripBookings } from '../controller/PrePlannedTripBookingController.js';
 import { AddNewsletterMail } from '../controller/NewsLetterController.js';
 import { AddHospital, deleteHospital, getAllHospitals, updateHospital, viewHospital } from '../controller/HospitalController.js';
 
@@ -89,7 +89,7 @@ router.post("/addPrePlannedTrips",AddPrePlannedTrips)
 
 router.get("/allPrePlannedTrips", getAllPrePlannedTrips)
 
-router.get("/all-pre-planned-trip-bookings", getAllPrePlannedTripBookings)
+router.get("/all-pre-planned-trip-bookings", getAllPrePlannedTrips)
 
 router.post("/add-pre-planned-trip-bookings", AddPrePlannedTripBooking)
 router.delete("/deletePrePlannedTrip", deletePrePlannedTrip)

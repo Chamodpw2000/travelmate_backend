@@ -50,4 +50,5 @@ const getAllPrePlannedTripBookings = async (req, res) => {
     }
 }
 
-export { AddPrePlannedTripBooking, getAllPrePlannedTripBookings}
+export { AddPrePlannedTripBooking, getAllPrePlannedTripBookings }
+
